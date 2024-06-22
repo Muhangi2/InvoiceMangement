@@ -1,0 +1,13 @@
+.container{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-top: 10px;
+     background-color: var(--bgSoft);
+}
+.logo{
+    font-weight: bold;
+}
+.text{
+    font-weight: bold;
+}
