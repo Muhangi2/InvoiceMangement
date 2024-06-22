@@ -6,9 +6,11 @@ import styles from "../ui/dashboard/dashboard.module.css"
 const layout = ({children}) => {
   return (
     <div className={styles.container}>
+      {/* leftside */}
         <div className={styles.menu}>
             <Sidebar/>
         </div>
+        {/* rightside and center */}
         <div className={styles.content}>
             <Navbar/>
             {children}
