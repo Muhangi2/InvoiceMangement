@@ -1,0 +1,18 @@
+.container{
+background-color: var(--bgSoft);
+padding: 20px;
+margin-top: 10px;
+border-radius: 10px;
+}
+.top{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.addButton{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(155, 90, 216);
+    color: var(--text);
+    padding: 10px;
+}
