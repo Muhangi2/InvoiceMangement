@@ -29,7 +29,7 @@ const SingleProduct = () => {
        <label>Description</label>
        <textarea type="text" name='description' placeholder='description'> 
        </textarea>
-       <button>Update</button>
+       <button type="submit">Update</button>
        </form>
         </div>
     </div>
