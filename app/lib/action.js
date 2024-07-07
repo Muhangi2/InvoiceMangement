@@ -2,7 +2,7 @@ import { connectToDatabase } from "./util";
 import { User } from "./models";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import bcrypt from 'bcrypt';
+import bcrypt from "bcrypt";
 
 export const addUsers = async (formData) => {
   "use server";
@@ -10,14 +10,14 @@ export const addUsers = async (formData) => {
     Object.fromEntries(formData);
 
   try {
-    await connectToDatabase(); 
+    await connectToDatabase();
 
     const hashedPassword = await bcrypt.hash(password, 10); // Hash the password
 
     const newUser = new User({
       name,
       email,
-      password: hashedPassword, 
+      password: hashedPassword,
       isAdmin,
       img,
       isActive,
@@ -27,12 +27,9 @@ export const addUsers = async (formData) => {
 
     const user = await newUser.save();
     console.log(user, "User added successfully");
-
-    revalidatePath("/dashboard/users");
-    redirect("/dashboard/users");
-
   } catch (error) {
     console.log(error, "Error adding user");
-    throw new Error("Error adding user");
   }
+  revalidatePath("/dashboard/users");
+  redirect("/dashboard/users");
 };
