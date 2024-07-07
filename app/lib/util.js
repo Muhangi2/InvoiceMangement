@@ -9,6 +9,6 @@ export const connectToDatabase = async () => {
     connection.isConnected = db.connections[0].readyState;
     console.log("Connection to database established");
   } catch (error) {
-    throw new Error("Error connecting to database");
+    console.log(error, "error while connecting to the database");
   }
 };

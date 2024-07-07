@@ -5,7 +5,6 @@ const userSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-
       unique: true,
       min: 2,
       max: 20,
@@ -78,6 +77,6 @@ const productSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-export const User = mongoose.models.user || mongoose.model("User", userSchema);
+export const User = mongoose.models.User || mongoose.model("User", userSchema);
 export const Product =
-  mongoose.models.product || mongoose.model("Product", productSchema);
+  mongoose.models.Product || mongoose.model("Product", productSchema);
