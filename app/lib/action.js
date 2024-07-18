@@ -8,7 +8,6 @@ export const addUsers = async (formData) => {
   "use server";
   const { name, email, password, isAdmin, img, isActive, phone, address } =
     Object.fromEntries(formData);
-
   try {
     await connectToDatabase();
 
